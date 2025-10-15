@@ -1,0 +1,20 @@
+{
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "editor.hover.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.inlineSuggest.enabled": false,
+  "editor.snippetSuggestions": "none",
+  "files.associations": {
+    "*.h": "c"
+  },
+  "debug.terminal.clearBeforeReusing": true,
+  "code-runner.runInTerminal": true,
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.settings.applyToAllProfiles": []
+}
