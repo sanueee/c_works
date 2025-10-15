@@ -1,2 +1,1 @@
-# c_works
-my c programms
+привет это саша и это мой реп
