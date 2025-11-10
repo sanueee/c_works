@@ -8,6 +8,7 @@ struct sieve_t {
     };
 
 void init_sieve(int n, struct sieve_t* s);
+int count_primes(int n, struct sieve_t* s);
 void print_sieve(struct sieve_t *s, int n);
 void free_sieve(struct sieve_t* s);
 
@@ -19,8 +20,7 @@ int main() {
     s.sieve = calloc((n - 1), sizeof(char));
     s.size = n;
     init_sieve(n, &s);
-    print_sieve(&s, n);
-    free_sieve(&s);
+    printf("%d", count_primes(n, &s));
     return 0;
 }
 
@@ -30,8 +30,10 @@ void init_sieve(int n, struct sieve_t* s) {
         assert((s->sieve + i) != NULL);
         *(s->sieve + i) = i + 2;
     }
+    /*
     print_sieve(s, n);
     printf("\n");
+    */
     for (int i = 0; i < (n - 1); i++) {
         int k = 0, j = 0;
         if (s->sieve[i] == 0) { // если уже побывали на 4 во время того как i = 2 например
@@ -49,6 +51,16 @@ void init_sieve(int n, struct sieve_t* s) {
             j+=k;
         }
     }
+}
+
+int count_primes(int n, struct sieve_t* s) {
+    int counter = 0;
+    for (int i = 0; i < n-1; i++) {
+        if (s->sieve[i] == 1) {
+            counter++;
+        }
+    }
+    return counter;
 }
 
 void print_sieve(struct sieve_t* s, int n) {
