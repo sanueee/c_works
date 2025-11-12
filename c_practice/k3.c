@@ -27,7 +27,7 @@ int prime_d(int n) {
     }
 }
 int prime(int x) {
-    if (x < 1) {
+    if (x < 2) {
         return 0;
     }
     for (int i = 2; i < (int)pow(x, 0.5)+1; i++) {
