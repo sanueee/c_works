@@ -7,9 +7,9 @@
 #define CHECK_BIT(n, i) (n & (1 << i)) // возвращает либо 0 либо 2^i
 #define ASSIGN_BIT(n, i, x) ((n & ~(1 << i)) | (x << i)) // устанавливает i-ый бит значением x (0 || 1)
 
-void input_arr(unsigned char* arr, int len);
-void inverse_bit(unsigned char* arr, int len, int bit);
-void print_arr(unsigned char* arr, int len);
+void input_arr(unsigned char* arr, int);
+void inverse_bit(unsigned char* arr, int bit);
+void print_arr(unsigned char* arr, int);
 
 int main(void) {
     int len;
@@ -21,7 +21,7 @@ int main(void) {
     int bit;
     scanf("%d", &bit);
 
-    inverse_bit(arr, len, bit);
+    inverse_bit(arr, bit);
 
     print_arr(arr, len);
 
@@ -36,7 +36,7 @@ void input_arr(unsigned char* arr, int len) {
     }
 }
 
-void inverse_bit(unsigned char* arr, int len, int bit) {
+void inverse_bit(unsigned char* arr, int bit) {
     int number = (int)(bit / 8);
     int number_bit = (int)(bit % 8);
     *(arr + number) = INVERSE_BIT(*(arr + number), number_bit);
@@ -45,4 +45,5 @@ void inverse_bit(unsigned char* arr, int len, int bit) {
 void print_arr(unsigned char* arr, int len) {
     for (int i = 0; i < len; i++)
         printf("%d ", (int)arr[i]);
+    printf("\n");
 }
